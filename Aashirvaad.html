@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Website</title>
+    <link rel="stylesheet" href="Layout6.css">
+     <link rel="stylesheet" href="cdnjs.cloudflare.com">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="fonts.googleapis.com" rel="stylesheet">
+  <link rel="stylesheet" href="cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="cdnjs.cloudflare.com" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"> 
+    <style>
+     
+
+.product-container {
+    display: flex;
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    width: 100%;
+    margin: auto;
+    margin-top: 100px;
+
+}
+
+.product-image-section {
+    flex: 1.5;
+
+}
+.product-image-section img{
+    width: 100%;
+}
+
+.product-details-section {
+    flex: 1;
+    padding: 20px;
+    font-size: 28px;
+}
+
+.product-title {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.product-focus {
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.product-description-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.product-description-list li {
+    margin-bottom: 10px;
+    color: #666;
+    line-height: 1.4;
+}
+
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #4CAF50; /* Green background as in image */
+    color: white;
+    padding: 15px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 0 0 8px 8px;
+    font-size: 20px;
+}
+
+.footer-left1 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    color: black;
+}
+
+.footer-title {
+    font-weight: bold;
+}
+
+.discount {
+    color:black;
+    font-size: 20px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.rating {
+    color: #FFEB3B; /* Yellow color for stars */
+    font-size: 1.2rem;
+}
+
+.footer-right {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.checkout-btn, .addcart-btn {
+    padding: 20px 80px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+.checkout-btn {
+    background-color: #4CAF50; /* Green button */
+    color:black;
+    border: 1px solid white;
+}
+
+.addcart-btn {
+    background-color: white;
+    color: orange;
+    border: 1px solid black;
+}   
+.product-grid {
+    margin-top: 100px;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(200px, 1fr));
+    gap: 50px;
+    width: 100%;
+    margin-left: 10px;
+    margin-bottom: 100px;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #4CAF50;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.card-content {
+    padding: 15px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: #efeeee;
+}
+
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.category {
+    color: #4CAF50;
+    font-size: 14px;
+}
+
+.fa-heart {
+    color: #ccc;
+    cursor: pointer;
+}
+
+.name {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 10px 0 5px 0;
+}
+
+.details {
+    font-size: 14px;
+    color: #777;
+    margin: 0 0 15px 0;
+}
+
+.footer-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto; /* Pushes to the bottom of the content area */
+}
+
+.price {
+    font-size: 22px;
+    font-weight: bold;
+    color: #333;
+}
+
+.rating {
+    display: flex;
+    align-items: center;
+    color: #f1c40f;
+}
+
+.rating span {
+    margin-left: 5px;
+    color: #333;
+    font-size: 14px;
+}
+
+.add-btn {
+    background-color: #fff;
+    border: 2px solid black;
+    color: black;
+    padding: 10px;
+    border-radius: 30px;
+    width: 40%;
+    margin-left: 180px;
+    margin-top: 15px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.add-btn:hover {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.fa-cart-plus {
+    margin-left: 5px;
+    color: red;
+    font-size: 24px;
+}
+.fa-heart{
+    float: right;
+    margin-top: 20px;
+    margin-right: 20px;
+    color: #4CAF50;
+}
+    </style>
+</head>
+<body>
+ <header class="site-header">
+    <div class="header-container">
+        <div class="logo-section">
+            <!-- Placeholder for the logo image -->
+            <div class="logo-placeholder"><img src="logo.png" alt="Logo" ></div>
+            
+        </div>
+        
+        <div class="search-section">
+            <input type="text" placeholder="Search product category" class="search-input">
+            <button class="search-button">
+                <!-- Magnifying glass icon can be added here (e.g., using an SVG or font icon) -->
+            </button>
+        </div>
+        
+        <div class="users">
+            <div class="user-profile" onclick="toggleDropdown()"><img src="user.png">
+            <nav class="dropdown-content" id="myDropdown">
+    <a href="Homeuser.html">My Accounts</a>
+    <a href="personalinfo.html">Personal Information</a>
+    <a href="#">My program</a>
+    <a href="mypassword.html">Password Manager</a>
+    <a href="logoutpage.html">Logout</a>
+  </nav></div>
+  <script>
+    function toggleDropdown() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.avatar')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+  </script>
+             <span class="icon-container" onclick="toggleDot()"><a href="wishlist.html"><i id="heart-icon" class="fa-regular fa-heart" style="color: black;margin-top: 0;"></i><span id="dot" class="dot"></span></a></span>
+            <span class="icon" style="text-decoration: none;color:black" ><a href="Checkout.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></span>
+           <span class="notification-icon" id="bellIcon"><i class="fa-regular fa-bell"></i></span> 
+        
+    </div>
+    </div>
+    <div id="orderPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2>Order Updates</h2>
+            <ul>
+                <li>"Your order has been placed successfully! We'll notify you once it's out for delivery."</li>
+                <li>"Good news! Your groceries are on the way. Track your delivery in real time."</li>
+                <li>"Your order has been delivered. Thank you for shopping with us!"</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        // Get the pop-up element
+var popup = document.getElementById("orderPopup");
+
+// Get the button that opens the pop-up
+var btn = document.getElementById("bellIcon");
+
+// Get the <span> element that closes the pop-up
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the pop-up 
+btn.onclick = function() {
+  popup.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the pop-up
+span.onclick = function() {
+  popup.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the pop-up, close it
+window.onclick = function(event) {
+  if (event.target == popup) {
+    popup.style.display = "none";
+  }
+}
+    </script>
+    <script>
+        function toggleDot() {
+    const dot = document.getElementById('dot');
+    const heartIcon = document.getElementById('heart-icon');
+
+    // Toggle the 'show' class to display/hide the dot
+    dot.classList.toggle('show');
+
+    // Optional: Toggle the 'active-heart' class to change the heart's color
+    heartIcon.classList.toggle('active-heart');
+}
+
+    </script>
+    <nav class="main-nav">
+        <a href="Home.html" >Home</a>
+        <a href="Shopping.html" >Shopping</a>
+        <a href="Categories.html" class="active">Categories</a>
+        <a href="Blogs.html">Blogs</a>
+        <a href="Contactus.html">Contact us</a>
+        <a href="Aboutus.html" class="active">About us</a>
+    </nav>
+</header> 
+
+       
+    <div class="product-container">
+        <div class="product-image-section">
+            <img src="bhgu.png">
+             <div class="product-footer">
+        <div class="footer-left1">
+            <span class="footer-title">Ashirvaad Attaa</span>
+            
+            <span class="price">$.200</span>
+            
+        </div>
+        <div class="footer-right">
+          <span class="discount">25%Off</span>  
+          <div class="rating">★★★★★</div>
+        </div>
+    </div>
+        </div>
+        
+        
+        <div class="product-details-section">
+            <h1 class="product-title">Asirvaad Attaa</h1>
+            <p class="product-focus">Freshness & Quality Focus</p>
+            <ul class="product-description-list">
+                <li>Made from the finest wheat grains, Aashirvaad Atta brings you soft, fluffy rotis packed with natural goodness and taste.</li>
+                <li>Trusted by millions of Indian households, Aashirvaad Atta delivers the authentic taste of home with every meal</li>
+                <li>Rich in fiber and essential nutrients, Aashirvaad Atta helps you and your family stay healthy and energized every day</li>
+            </ul>
+            <div>
+            <button class="checkout-btn" onclick="window.location.href='Checkout.html'">Checkout</button>
+            <button class="addcart-btn" onclick="window.location.href='Checkout.html'">Addcart+</button>
+        </div> 
+
+        </div>
+    </div>
+    <div style="margin-left: 100px;margin-top: 100px;font-size: 30px;">Similar Products</div>
+    <div class="product-grid">
+         <div class="product-card">
+            <div class="badge">20% off</div>
+            <div><i class="fas fa-heart"></i></div>
+            <img src="Nutraj-Flax-Seeds.png" alt="Box of Chocolate">
+            <div class="card-content">
+                <div class="header-section">
+                    <span class="category">Grocery</span>
+                    
+                </div>
+                <p class="name">Flaxseed</p>
+                <p class="details">750g</p>
+                <div class="footer-section">
+                    <span class="price">$134</span>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.5</span>
+                    </div>
+                </div>
+                <button class="add-btn">Add <i class="fas fa-cart-plus"></i></button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="badge">20% off</div>
+            <div><i class="far fa-heart"></i></div>
+            <img src="Parrys-White-Label-Sugar.png" alt="Red Onion">
+            <div class="card-content">
+                <div class="header-section">
+                    <span class="category">Grocery</span>
+                
+                </div>
+                <p class="name">Sugar</p>
+                <p class="details">1kg</p>
+                <div class="footer-section">
+                    <span class="price">$50</span>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.5</span>
+                    </div>
+                </div>
+                <button class="add-btn">Add <i class="fas fa-cart-plus"></i></button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="badge">20% off</div>
+            <div><i class="far fa-heart"></i></div>
+            <img src="Bhagyalakshmi-Ragi-Flour.png" alt="Red Onion">
+            <div class="card-content">
+                <div class="header-section">
+                    <span class="category">Grocery</span>
+                    
+                </div>
+                <p class="name">Ragi Flour</p>
+                <p class="details">750g</p>
+                <div class="footer-section">
+                    <span class="price">$234</span>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.5</span>
+                    </div>
+                </div>
+                <button class="add-btn">Add <i class="fas fa-cart-plus"></i></button>
+            </div>
+        </div>
+        <div class="product-card">
+            <div class="badge">20% off</div>
+            <div><i class="far fa-heart"></i></div>
+            <img src="bhgu.png" alt="Banana">
+            <div class="card-content">
+                <div class="header-section">
+                    <span class="category">Grocery</span>
+                    
+                </div>
+                <p class="name">Ashirvaad Attaa</p>
+                <p class="details">1kg</p>
+                <div class="footer-section">
+                    <span class="price">$200</span>
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <span>4.5</span>
+                    </div>
+                </div>
+                <button class="add-btn">Add <i class="fas fa-cart-plus"></i></button>
+            </div>
+        </div>
+
+    </div>
+    
+
+
+<footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <!-- Placeholder for the person image -->
+                <img src="footer.png" alt="Person" class="person-img">
+                <div class="footer-logo-section">
+                    <!-- Placeholder for the logo image -->
+                    <img src="logo.png" alt="The Market Logo" class="logo-img">
+    
+                    <p style="font-size: 24px;font-weight: bold;">Follow Us On:</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Career</a></li>
+                    </ul>
+                </div>
+                <div class="link-group">
+                    <h4>Customer service</h4>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Track your order</a></li>
+                        <li><a href="#">Return</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="link-group">
+                    <h4>Our information</h4>
+                    <ul>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">User terms&Conditions</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                    </ul>
+                </div>
+                <div class="link-group" style="color: black;">
+                    <h4>Contact info</h4>
+                    <p>123-456-789</p>
+                    <p>example@gmail.com</p>
+                    <p>72, north street</p>
+                    <p>Mumbai-001.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 My market. All rights reserved.</p>
+            <p style="font-weight: bold;"><a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a></p>
+        </div>
+    </footer> 
+</body>
+</html>

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Website</title>
+     <link rel="stylesheet" href="Layout6.css">
+     <link rel="stylesheet" href="cdnjs.cloudflare.com">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="fonts.googleapis.com" rel="stylesheet">
+  <link rel="stylesheet" href="cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="cdnjs.cloudflare.com" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">  
+    <style>
+        p{
+         font-size: 24px;
+        }
+        .contact-container{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-evenly;
+            align-items: center;
+            margin-bottom: 100px;
+            
+        }
+        .contents{
+            display: flex;
+            flex-direction: column;
+            gap: 40px;
+            margin-top: 100px;
+        }
+        .content1{
+            display: flex;
+            flex-direction: row;
+            gap:50px;
+            margin-bottom: 100px;
+        }
+        .content2{
+            display: flex;
+            flex-direction: row;
+            gap:50px;
+            margin-left: 50px;
+        }
+        .content2 img{
+            width:30px;
+            height: 30px;
+        }
+    </style>
+</head>
+<body>
+ 
+    <header class="site-header">
+    <div class="header-container">
+        <div class="logo-section">
+            <!-- Placeholder for the logo image -->
+            <div class="logo-placeholder"><img src="logo.png" alt="Logo" ></div>
+            
+        </div>
+        
+        <div class="search-section">
+            <input type="text" placeholder="Search product category" class="search-input">
+            <button class="search-button">
+                <!-- Magnifying glass icon can be added here (e.g., using an SVG or font icon) -->
+            </button>
+        </div>
+        
+        <div class="users">
+            <div class="user-profile" onclick="toggleDropdown()"><img src="user.png">
+                <nav class="dropdown-content" id="myDropdown">
+    <a href="Homeuser.html">My Accounts</a>
+    <a href="personalinfo.html">Personal Information</a>
+    <a href="#">My program</a>
+    <a href="mypassword.html">Password Manager</a>
+    <a href="logoutpage.html">Logout</a>
+  </nav></div>
+  <script>
+    function toggleDropdown() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.avatar')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+  </script>
+             <span class="icon"><a href="wishlist.html"><i class="fa-regular fa-heart" style="color: black;margin-top: 0;"></i></a></span>
+            <span class="icon" style="text-decoration: none;color: #B89C65;" ><a href="Checkout.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></span>
+           <span class="notification-icon" id="bellIcon"><i class="fa-regular fa-bell"></i></span> 
+        
+    </div>
+    </div>
+    <div id="orderPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2>Order Updates</h2>
+            <ul>
+                <li>"Your order has been placed successfully! We'll notify you once it's out for delivery."</li>
+                <li>"Good news! Your groceries are on the way. Track your delivery in real time."</li>
+                <li>"Your order has been delivered. Thank you for shopping with us!"</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        // Get the pop-up element
+var popup = document.getElementById("orderPopup");
+
+// Get the button that opens the pop-up
+var btn = document.getElementById("bellIcon");
+
+// Get the <span> element that closes the pop-up
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the pop-up 
+btn.onclick = function() {
+  popup.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the pop-up
+span.onclick = function() {
+  popup.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the pop-up, close it
+window.onclick = function(event) {
+  if (event.target == popup) {
+    popup.style.display = "none";
+  }
+}
+    </script>
+    <nav class="main-nav">
+        <a href="Home.html" >Home</a>
+        <a href="Shopping.html" >Shopping</a>
+        <a href="Categories.html" class="active">Categories</a>
+        <a href="Blogs.html">Blogs</a>
+        <a href="Contactus.html" class="active">Contact us</a>
+        <a href="Aboutus.html">About us</a>
+    </nav>
+</header> 
+<h1 style="text-align: center;margin-bottom: 50px;margin-top: 100px;">Contact Us</h1>
+<p style="text-align: center;margin-bottom: 50px;margin-right: 410px;">We are here to help you make your house feel like home</p>
+<p style="margin-bottom: 50px;margin-left: 240px;">Whether you have questions about a product, need help with your order, or simply want advice<br>on styling your space -<b>our team is ready to assist.</b> </p>
+<div class="contact-container">
+    <div class="contents">
+        <div class="content1">
+         <img src="way.jpg" width="150px">
+         <p>Address:<br>123, Creative learn street, Roman City, TX 54321.</p>
+        </div>
+        <div class="content2">
+         <span style="font-size: 28px;">&#9742;</span>
+         <p>Phone:<br> +1 234 567 890</p>
+         <img src="users+.png" width="30px">
+         <div style="margin-left: 30px;"><img src="instagram-icon.jpg"><p>[Instagram,</p></div>
+         <div><img src="facebook.png"><p>Facebook]</p></div>
+        </div>
+    </div>
+    <div class="image1">
+        <img src="contact.png" width="500px">
+    </div>
+</div>
+
+<footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <!-- Placeholder for the person image -->
+                <img src="footer.png" alt="Person" class="person-img">
+                <div class="footer-logo-section">
+                    <!-- Placeholder for the logo image -->
+                    <img src="logo.png" alt="The Market Logo" class="logo-img">
+    
+                    <p style="font-size: 24px;font-weight: bold;">Follow Us On:</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Career</a></li>
+                    </ul>
+                </div>
+                <div class="link-group">
+                    <h4>Customer service</h4>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Track your order</a></li>
+                        <li><a href="#">Return</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="link-group">
+                    <h4>Our information</h4>
+                    <ul>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">User terms&Conditions</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                    </ul>
+                </div>
+                <div class="link-group" style="color: black;">
+                    <h4>Contact info</h4>
+                    <p>123-456-789</p>
+                    <p>example@gmail.com</p>
+                    <p>72, north street</p>
+                    <p>Mumbai-001.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 My market. All rights reserved.</p>
+            <p style="font-weight: bold;"><a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a></p>
+        </div>
+    </footer> 
+</body>
+</html>
