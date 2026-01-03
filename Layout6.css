@@ -1,0 +1,340 @@
+
+.site-header {
+    background-color: #ffffff;
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+
+}
+
+.logo-section {
+    display: flex;
+    align-items: center;
+}
+
+.logo-placeholder img{
+    /* Assuming a small icon for the logo */
+    width: 200px;
+    height: 140px;
+}
+.active{
+    color: #4CAF50;
+}
+
+
+.search-section {
+    display: flex;
+    flex-grow: 1;
+    max-width: 700px;
+    margin: 0 40px;
+}
+
+.search-input {
+    flex-grow: 1;
+    padding: 30px 35px;
+    border: 1px solid #4CAF50;
+    border-radius: 50px 0 0 50px;
+    outline: none;
+    font-size: 20px;
+    background-color:#4CAF50; /* Light green background */
+}
+.search-input::placeholder {
+    color: #fff; /* White placeholder text */
+}
+
+.search-button {
+    padding: 20px 30px;
+    border: none;
+    background-color: #4CAF50;
+    color: white;
+    border-radius: 0 50px 50px 0;
+    cursor: pointer;
+    /* Styles for the magnifying glass icon would go here */
+}
+.user-profile img{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+}
+.users{
+    display: flex;
+    flex-direction: row;
+    color:black;
+    font-size: 40px;
+    gap:30px;
+}
+.icon{
+    color: black;
+    text-decoration: none;
+}
+.icon a{
+    text-decoration: none;
+    color: black;
+}
+
+.register-button {
+    padding: 12px 35px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 15px;
+    padding: 0 20px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: black;
+    margin: 0 15px;
+    font-size: 20px;
+    padding: 5px 0;
+    position: relative;
+}
+
+.main-nav a:hover {
+    color: #4CAF50;
+}
+body {
+    font-family: ' Nunito Sans',sans-serif;
+}
+
+footer {
+    background-color: #ff9800; /* The orange color from the image */
+    color: black;
+    padding: 20px 0 10px;
+    width: 100%;
+}
+
+.footer-container {
+    display: flex;
+    padding: 20px;
+    flex-wrap: wrap;
+    gap:100px;
+}
+
+.footer-left {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+}
+
+.person-img {
+    width: 150px;
+    height: auto;
+    border-radius: 50%; /* The image in the original has rounded corners */
+    margin-right: 20px;
+}
+
+.logo-img {
+    width: 100px;
+    height: auto;
+}
+
+.logo-text {
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+.social-icons a {
+    color: black;
+    margin-right: 10px;
+    font-size: 32px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 100px;
+    
+}
+
+.link-group h4 {
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.link-group ul {
+    list-style: none;
+    padding: 0;
+}
+
+.link-group ul li a {
+    color:black;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 5px;
+    font-size: 20px;
+}
+.link-group p{
+    color: black;
+    font-size: 20px;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.footer-bottom p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.footer-bottom a {
+    color: black;
+    text-decoration: none;
+}
+
+/* Basic responsiveness */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-left {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .person-img {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+    
+    .link-group {
+        text-align: center;
+    }
+}
+
+
+/* The Pop-up (modal) background */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    right: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgba(0,0,0,0.4); /* Black background with opacity */
+}
+
+/* Pop-up content box */
+.popup-content {
+    background-color: #4CAF50; /* Green background color from image */
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+    color:black;
+    border-radius: 5px;
+}
+
+/* The Close Button */
+.close {
+    color: black;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.popup-content ul {
+    list-style-type: disc;
+    padding-left: 20px;
+}
+
+.popup-content li {
+    margin-bottom: 10px;
+}
+.icon-container {
+    position: relative; /* Essential for positioning the dot */
+    display: inline-block;
+    cursor: pointer; /* Makes it clear the icon is interactive */
+    font-size: 50px; /* Adjust size as needed */
+    color: grey; /* Initial heart color */
+}
+
+/* Style for the red dot */
+.dot {
+    position: absolute;
+    top: 0;
+    right: -5px; /* Adjust positioning as needed */
+    height: 15px;
+    width: 15px;
+    background-color:#4CAF50;
+    border-radius: 50%; /* Makes it a circle */
+    display: none; /* Initially hide the dot */
+}
+
+/* Class added by JavaScript to show the dot */
+.show {
+    display: block;
+}
+
+/* Optional: change heart color when the dot is visible */
+.active-heart {
+    color: #4CAF50;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9; /* Light background for the menu */
+  min-width: 300px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  right: 5;
+  font-size: 20px;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block; /* Makes each link a block element for full width and padding */
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+  }
+
+/* Show the dropdown menu (this class is added/removed by JavaScript) */
+.show {
+  display: block;
+}

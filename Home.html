@@ -1,0 +1,1200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Website</title>
+    <link rel="stylesheet" href="Layout6.css">
+     <link rel="stylesheet" href="cdnjs.cloudflare.com">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="fonts.googleapis.com" rel="stylesheet">
+  <link rel="stylesheet" href="cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="cdnjs.cloudflare.com" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        .content-container{
+    max-width: 800px;
+    margin: 20px;
+    padding:20px;
+}
+
+
+/* Hero Section Styling */
+.hero-section {
+    height: 70vh; /* Adjust height as needed */
+    background: url('Bg1.png') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: white;
+}
+
+
+.hero-section .content-container {
+    position: relative;
+    text-align: left; 
+}
+.hero-section h3 {
+    font-size: 4rem;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.hero-section p {
+    margin-bottom: 20px;
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+/* Buttons Styling */
+.shop-now-btn {
+    background-color: #4CAF50; /* Green color from the image */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 8px;
+    display: inline-block;
+    margin-right: 10px;
+    border: none;
+    font-size: 20px;
+}
+.enquiry-furniture-btn {
+    /* Style for secondary button, maybe white background with green text */
+    color:orange;
+    padding: 10px 20px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+/* Ratings Section Styling */
+.ratings-section {
+    background-color: white;
+    margin-top: -50px; /* Overlap with hero section */
+    position: relative;
+    z-index: 2;
+}
+.ratings-content {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.social-proof img {
+    margin-left: 20px;
+    padding: 20px;
+    width: 200px;
+    height: 80px;
+    margin-right: -10px; /* Overlap effect */
+    border: 2px solid white;
+}
+
+.ratings-text p {
+    font-size: 12px;
+}
+
+/* Add media queries for responsiveness */
+@media (max-width: 768px) {
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+}
+.why-choose-us {
+    text-align: center;
+    padding: 10px 20px;
+    width:100% ;
+    margin: 0 auto;
+}
+
+.section-title {
+    color: #e6a700; /* Example color, adjust to match image's yellow/orange */
+    margin-bottom: 40px;
+    font-size: 2rem;
+}
+
+.card-container {
+    display: grid; 
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 45px; 
+    height: 300px;
+}
+.card {
+    background-color: #fff;
+    padding:30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Adds the card effect */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px); /* Subtle hover effect */
+}
+
+.card-icon {
+    width: 100px; /* Adjust size of the circular icon background */
+    height: 100px;
+    border-radius: 50%; /* Makes it a circle */
+    background-color: #f0f8ff; /* Light background for the icon area */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+    
+}
+
+.card-icon img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 50%; /* Makes the image circular to match the design */
+}
+
+.card-text {
+    font-size: 1rem;
+    font-weight: bold;
+    color:black;
+}
+.categories-container {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+}
+
+.main-title {
+    color: #e6a700; /* Approximate color from image */
+    margin-bottom: 40px;
+    font-weight: normal;
+}
+.categories{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0;
+    margin-top: 50px;
+    background-color: #ffffff;
+    gap:50px;
+    width:100%;
+}
+
+
+.category-list {
+    display: flex;
+    justify-content: center;
+    gap: 60px; 
+    width: 100%;
+    flex-wrap: wrap;
+}
+.category-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color:black;
+    font-size: 18px;
+    
+}
+
+.circle-image {
+    width: 220px; /* Diameter of the circle */
+    height: 220px; /* Diameter of the circle */
+    border-radius: 50%; /* Makes the div a circle */
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+}
+.category-item span {
+    margin-top: 10px;
+    font-size: 18px;
+    text-align: center;
+}
+.container {
+    text-align: center;
+    width: 100%;
+    padding: 20px;
+    margin-top: 100px;
+}
+
+.main-title {
+    color: #ff9800; /* Approximate color from the image text */
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 30px;
+}
+
+.deals-container {
+    display: flex;
+    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+    gap: 60px;
+    width: 100%;
+}
+.deal-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 45%;
+}
+
+.image-placeholder {
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    width: 95%;
+    padding-top: 50%; 
+    position: relative;
+}
+.image-placeholder img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the area nicely */
+    display: block;
+}
+
+.deal-text {
+    margin-top: 50px;
+    color:black;
+    font-size: 20px;
+}
+.main-title {
+    text-align: center;
+    color: #FFA500; /* Orange color from image */
+    margin-bottom: 30px;
+}
+
+.product-container {
+    display: flex;
+    justify-content: center;
+    gap: 150px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.product-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 350px;
+    overflow: hidden;
+}
+
+.product-image-wrapper {
+    position: relative;
+}
+
+.product-image {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.discount-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #FFA500; /* Orange badge */
+    color: white;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: 0.8em;
+    font-weight: bold;
+}
+
+.wishlist-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #e74c3c; /* Red heart */
+    background-color: white;
+    border-radius: 50%;
+    padding: 5px;
+    cursor: pointer;
+}
+
+.product-details {
+    padding: 15px;
+}
+
+.category-rating {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+.category {
+    color: #888;
+}
+
+.rating {
+    color: #FFA500; /* Orange stars */
+}
+
+.product-name {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 0 0 5px 0;
+}
+
+.product-weight {
+    color: #888;
+    font-size: 0.9em;
+    margin: 0 0 15px 0;
+}
+
+.price-add {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.price {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #333;
+}
+
+.add-btn {
+    background-color: #f7f7f7;
+    border: 1px solid #ddd;
+    color: #333;
+    padding: 8px 12px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.add-btn:hover {
+    background-color: #eee;
+}
+
+.add-btn i {
+    margin-right: 5px;
+    color: #FFA500;
+}
+
+.faq-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    margin-top: 100px;
+}
+
+.faq-item {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    padding: 15px;
+    box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+}
+
+.faq-question {
+    color: black;
+    font-size: 32px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer; /* Indicates interactivity */
+}
+
+.arrow {
+    color:black;
+    font-size: 0.8em;
+    transform: rotate(0deg); /* Visual representation of the 'v' indicator */
+    transition: transform 0.3s;
+}
+
+.faq-answer {
+    color:black;
+    font-size: 20px;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+    
+}
+.form-container {
+    margin-left:150px;
+    background-color: white;
+    padding:10px;
+    height: 550px;
+    flex:2;
+    width:200px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    
+}
+.image-container {
+    background: url('footer.png') no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    flex:1;
+    
+}
+.image-container img{
+    height:100%;
+    width:100%;
+
+    
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: black;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+.input-group input {
+    width:500px;
+    padding: 10px;
+    margin-left: 130px;
+    margin-right: 100px;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    height:60px;
+    font-size: larger;
+    box-sizing: border-box;
+}
+
+.login-btn {
+    width: 25%;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 130px;
+    padding: 5px;
+}
+
+.forgot-pw {
+    display: block;
+    text-align: center;
+    font-size: 18px;
+    color:black;
+    margin-top: 10px;
+    margin-left: 100px;
+    text-decoration: none;
+}
+
+.signup-text {
+    text-align: center;
+    margin: 22px 0 10px;
+    color:black;
+    font-size: 20px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap:40px;
+    border:2px solid #4CAF50;
+    padding:20px;
+    margin-left: 130px;
+    margin-right: 100px;
+    border-radius: 10px;
+    
+    
+}
+
+.social-icons a img {
+    width: 30px;
+    margin: 0 5px;
+}
+
+.create-account {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 18px;
+}
+
+.create-account a {
+    color:#4CAF50;
+    text-decoration: none;
+}
+.modal {
+  display: none; 
+  z-index: 1; /* Sit on top */
+  position: fixed;
+  right: 0;
+  top:50px;
+  width: 90%;
+  height: 80%; /* Full height */
+  background-color:rgb(246, 228, 229);
+  gap:100px;
+}
+.modal-cont1{
+  display: none; 
+  position: fixed;
+  z-index: 1; 
+  right: 0;
+  top:10px;
+  width: 90%;
+  height:80%;
+  background-color:rgb(246, 228, 229);
+  gap:100px;
+  margin-left: 200px;
+}
+.modal-cont{
+    display: flex;
+ flex-direction: row;
+ height: 100%;
+}
+.modal-container{
+display: flex;
+gap: 100px;
+height: 80%;
+}
+
+.close {
+  color:black;
+  float: right;
+  font-size: 32px;
+  margin-top: 0;
+  font-weight: bold;
+  cursor: pointer;
+
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.form-container span{
+    margin-top: 0;
+    margin-left: 100px;
+}
+.modal-header{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+.image-section {
+    flex: 1;
+}
+
+.image-section img {
+    width: 100%;
+    height: 100%;
+}
+.form-section {
+    flex:1;
+    display: flex;
+    width:300px;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin:70px;
+    border-radius: 10px;
+}
+
+.form-container1 {
+    width: 80%;
+    margin-bottom: 50px;
+    margin-left: 150px;
+    
+}
+
+.form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.form-header h2 {
+    margin: 0;
+    color: #333;
+}
+
+.close-btn {
+    font-size: 24px;
+    cursor: pointer;
+    color:black;
+}
+
+.input-group1 {
+    margin-bottom: 15px;
+}
+.input-group1::placeholder{
+    color:#4CAF50;
+}
+
+.input-group1 input {
+    width: 70%;
+    padding: 10px;
+    border: 2px solid #4CAF50;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: larger;
+}
+.signup-btn {
+    width: 60%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    margin-left: 70px;
+}
+
+.signup-btn:hover {
+    background-color: #4CAF50;
+
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.login-link a {
+    color: #4CAF50;
+    text-decoration: none;
+    font-weight: bolder;
+}
+.success-message {
+    display: none; /* Hidden by default */
+    text-align: center;
+    font-size: 24px;
+    padding: 10px;
+    margin-top: 200px;
+    color:white;
+
+}
+.form-container.red-background {
+    background-color: #4CAF50; /* Red background color */
+    color: white;
+}
+.form-section.red-background {
+    background-color: #4CAF50; /* Red background color */
+    color: white;
+}
+
+    </style>
+</head>
+<body>
+<header class="site-header">
+    <div class="header-container">
+        <div class="logo-section">
+            <!-- Placeholder for the logo image -->
+            <div class="logo-placeholder"><img src="logo.png" alt="Logo" ></div>
+            
+        </div>
+        
+        <div class="search-section">
+            <input type="text" placeholder="Search product category" class="search-input">
+            <button class="search-button">
+                <!-- Magnifying glass icon can be added here (e.g., using an SVG or font icon) -->
+            </button>
+        </div>
+        
+        <div class="register-section">
+            <button class="register-button" onclick="openForm()">Register</button>
+        </div>
+    </div>
+    <nav class="main-nav">
+        <a href="Home.html">Home</a>
+        <a href="Shopping.html">Shopping</a>
+        <a href="Categories.html">Categories</a>
+        <a href="Blogs.html">Blogs</a>
+        <a href="Contactus.html">Contact us</a>
+        <a href="Aboutus.html">About us</a>
+    </nav>
+</header> 
+<div class="modal" id="registrationModal">
+    <div class="modal-container">
+        <div class="form-container" id="formContainer">
+            <div class="modal-header"><h2 id="heading" style="text-align: center;margin-top: 60px;font-size:32px;">Register Free !</h2><span id="close" class="close" onclick="closeForm()">&times;</span></div>
+            <form id="loginform">
+                <div class="input-group" >
+                    <input type="email" id="email" placeholder="Enter your e-mail" required>
+                </div>
+                <div class="input-group">
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <div style="display: flex;flex-direction: row;"><button class="login-btn" type="submit">Login</button>
+                    <div id="forgot">
+            <a href="#" class="forgot-pw">Forget your password?</a></div></div>
+            </form>
+            <div class="success-message" id="successMessage">
+        Login successfully!
+    </div>
+            
+            <script>
+const emailField = document.getElementById('email');
+const passwordField = document.getElementById('password');
+emailField.onclick = () => emailField.value = "amjaann@gmail.com";
+passwordField.onclick=() => passwordField.value ='1234567';
+</script>
+<script>
+    document.getElementById('formContainer').addEventListener('submit', function(event) {
+    event.preventDefault(); 
+
+    const formContainer = document.getElementById('formContainer');
+    const LoginFormr=document.getElementById('loginform');
+    const successMessage = document.getElementById('successMessage');
+    const forgotPswd=document.getElementById('forgot');
+    const accountForm=document.getElementById('account');
+    const socialIcons=document.getElementById('socialicons');
+    const regHeadng=document.getElementById('heading');
+    const reg=document.getElementById('signup-text');
+    const close1=document.getElementById('close');
+    formContainer.classList.add('red-background');
+    LoginFormr.style.display = 'none';
+    forgotPswd.style.display = 'none';
+    accountForm.style.display = 'none';
+    socialIcons.style.display = 'none';
+    regHeadng.style.display = 'none';
+    successMessage.style.display = 'block';
+    reg.style.display= 'none';
+    close1.style.display= 'none';
+    setTimeout(function() {
+            window.location.href = 'Homeuser.html'; 
+        }, 2000);
+});    
+
+</script>
+           <div>
+            <p class="signup-text" id="signup-text">____________________Sign Up Using_________________</p></div>
+            <div class="social-icons" id="socialicons">
+                <a href="#"><img src="google-icon.jpg" alt="Google"></a>
+                <a href="#"><img src="facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="instagram-icon.jpg" alt="Instagram"></a>
+                <a href="#"><img src="twitter.jpg" alt="Twitter"></a>
+            </div>
+            <p class="create-account" id="account">Don't have an account? <a href="#" onclick="toggleForms('signUp', 'registrationModal'); return false;" >Create New Account.</a>
+    </div>
+        <div class="image-container">
+        
+        </div>
+    </div>
+    </div>
+    <div class="modal-cont1" style="display: none;" id="signUp">
+        <div class="modal-cont">
+        <div class="image-section">
+            <img src="signup.png" width="100%" alt="Table">
+        </div>
+        <div class="form-section" id="formContainers" >
+            <div class="form-container1" >
+                <div class="form-header" id="formheader" >
+                    <h2>Sign Up</h2>
+                    <span class="close" onclick="closeForm()">&times;</span>
+                </div>
+                <form id="signupForm">
+                    <div class="input-group1">
+                        <input type="text" id="fullName" required placeholder="Full Name">
+                    </div>
+                    <div class="input-group1">
+                        <input type="email" id="email1" required placeholder="Email">
+                    </div>
+                    <div class="input-group1">
+                        <input type="password" id="password1" required placeholder="Password">
+                    </div>
+                    <button type="submit" onclick="redirectPage()" style="background-color: #4CAF50;color: white;border-radius: 8px;padding: 10px 60px;border: none;font-size: 18px;">Sign Up</button>
+                </form>
+                <div class="success-message" id="successMessages">
+        Signup Successfully
+    </div>
+                 <script>
+        const nameField = document.getElementById('fullName');
+const email1Field = document.getElementById('email1');
+email1Field.onclick = () => email1Field.value = "amjaann@gmail.com";
+nameField.onclick=() => nameField.value ='Amjath Althaf';
+const passField = document.getElementById('password1');
+passField.onclick = () => passField.value = '1234567';
+    </script>
+    <script>
+   document.getElementById('signupForm').addEventListener('submit', function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    const formContainer1 = document.getElementById('formContainers');
+    const formHeader1=document.getElementById('formheader');
+    const signupForm = document.getElementById('signupForm');
+    const successMessage1 = document.getElementById('successMessages');
+    const loginLink1 = document.getElementById('loginlink');
+
+    formContainer1.classList.add('red-background');
+    loginLink1.style.display = 'none';
+    signupForm.style.display = 'none';
+    formHeader1.style.display = 'none';
+    successMessage1.style.display = 'block';
+    setTimeout(function() {
+            window.location.href = 'Homeuser.html'; 
+        }, 2000);
+});    
+</script>     
+
+                   <div class="login-link" id="loginlink">
+                    <p>Already have an account? <a href="#" onclick="toggleForms('registrationModal','signUp'); return false;">Log in</a></p>
+                </div>
+            </div>
+            </div>
+            </div>
+            </div>
+       
+
+   
+      
+<script>
+    var modal = document.getElementById("registrationModal");
+
+function openForm() {
+  modal.style.display = "block";
+}
+
+function closeForm() {
+  modal.style.display = "none";
+}
+  
+function handlePaymentSuccess()
+{
+document.getElementById('registrationModal').style.display = 'none';
+document.getElementById('signUp').style.display = 'block';
+}
+function toggleForms(showFormId, hideFormId) {
+    
+    var showForm = document.getElementById(showFormId);
+    var hideForm = document.getElementById(hideFormId);
+
+    
+    if (showForm) {
+        showForm.style.display = 'block'; 
+    }
+
+    
+    if (hideForm) {
+        hideForm.style.display = 'none';
+    }
+}
+function redirectPage() {
+
+    window.location.href = 'Homeuser.html';
+}
+
+</script>
+
+<div class="hero-section">
+    
+        <div class="content-container">
+            <h3>Explore Fresh & Healthy</h3>
+            <p style="font-size: 32px;">Convenience and Trust your way</p>
+            <p>Your trusted online grocery store for quick, easy, and reliable shopping—freshness delivered within hours.</p>
+            <a href="#" class="shop-now-btn">Shop now →</a>
+            <a href="#" class="enquiry-furniture-btn">Enquiry Furniture</a>
+        </div>
+    </div>
+
+    <!-- Main content area -->
+    <main>
+        <section class="ratings-section">
+            <div class="ratings-content">
+                <div class="social-proof">
+                    <img src="Group 452.png" alt="Users">
+                    
+                </div> 
+                <div class="ratings-text">
+                    <h2>4.9k Ratings+</h2>
+                    <p>Trusted by 50k customers.</p>
+                </div>
+            </div>
+        </section>
+        <!-- Other sections like products, categories, footer go here -->
+    </main>
+    <section class="why-choose-us">
+        <h1 class="section-title">Why Choose Us!</h1>
+        <div class="card-container">
+            <div class="card">
+                <div class="card-icon">
+                    <!-- Placeholder for the first image -->
+                    <img src="card1.png" alt="Fresh & Handpicked icon">
+                </div>
+                <p class="card-text">Fresh & Handpicked</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <!-- Placeholder for the second image -->
+                    <img src="card2.png" alt="Fast & Reliable Delivery icon">
+                </div>
+                <p class="card-text">Fast & Reliable Delivery</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                     <!-- Placeholder for the third image -->
+                    <img src="card3.png" alt="Affordable Prices icon">
+                </div>
+                <p class="card-text">Affordable Prices</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <!-- Placeholder for the fourth image -->
+                    <img src="card4.png" alt="Wide Variety icon">
+                </div>
+                <p class="card-text">Wide Variety</p>
+            </div>
+            <div class="card">
+                <div class="card-icon">
+                    <!-- Placeholder for the fifth image -->
+                    <img src="card5.png" alt="Quality & Trust icon">
+                </div>
+                <p class="card-text">Quality & Trust</p>
+            </div>
+        </div>
+    </section>
+    <div class="categories">
+     <div class="categories-container">
+        <h1 class="main-title">Categories</h1>
+
+        <div class="category-list">
+            <div class="category-item">
+                
+                <div class="circle-image" style="background-image: url('Group 30670.png');"></div>
+                <span>Vegtables</span>
+            </div>
+            <div class="category-item">
+               
+                <div class="circle-image" style="background-image: url('Group 30671.png');"></div>
+                <span>Fresh fruits</span>
+            </div>
+            <div class="category-item">
+                
+                <div class="circle-image" style="background-image: url('Group 30672.png');"></div>
+                <span>Milk&egg</span>
+            </div>
+            <div class="category-item">
+                <div class="circle-image" style="background-image: url('Group 30673.png');"></div>
+                <span>Dry fruits</span>
+            </div>
+            <div class="category-item">
+                
+                <div class="circle-image" style="background-image: url('Group 30674.png');"></div>
+                <span>House hold</span>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="container">
+        <header class="main-title">
+            Deals flat 25% off
+        </header>
+        <div class="deals-container">
+            <div class="deal-card">
+                <div class="image-placeholder veg-image">
+                    <!-- Placeholder for the vegetables image -->
+                    <img src="vegetables.png" alt="Fresh vegetables offer">
+                </div>
+                <div class="deal-text">
+                    <p>Fresh vegtables have 25% OFF</p>
+                    <button class="shop-now-btn">Shop Now</button>
+                </div>
+            </div>
+            <div class="deal-card">
+                <div class="image-placeholder fruit-image">
+                    <!-- Placeholder for the fruits image -->
+                    <img src="fruits.png" alt="Fresh fruits offer">
+                    
+                </div>
+                <div class="deal-text">
+                    <p>Fresh fruits have 25% OFF</p>
+                    <button class="shop-now-btn">Shop Now</button>
+                </div>
+                 </div>
+        </div>
+    </div>
+    <h1 class="main-title">Featured products</h1>
+
+    <div class="product-container">
+        <!-- Product Card 1: Strawberry -->
+        <div class="product-card">
+            <div class="product-image-wrapper">
+                <img src="strawberry.png" alt="Fresh Strawberry" class="product-image">
+                <span class="discount-badge">20% off</span>
+                <i class="fa-regular fa-heart wishlist-icon"></i>
+            </div>
+            <div class="product-details">
+                <div class="category-rating">
+                    <span class="category">Fruits</span>
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.5</span>
+                </div>
+                <p class="product-name">Fresh Strawberry</p>
+                <p class="product-weight">500g</p>
+                <div class="price-add">
+                    <span class="price">$56</span>
+                    <button class="add-btn"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Card 2: Combo -->
+        <div class="product-card">
+            <div class="product-image-wrapper">
+                <img src="orange.png" alt="Fresh combo" class="product-image">
+                <span class="discount-badge">20% off</span>
+                <i class="fa-regular fa-heart wishlist-icon"></i>
+            </div>
+            <div class="product-details">
+                <div class="category-rating">
+                    <span class="category">Vegetables</span>
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.5</span>
+                </div>
+                <p class="product-name">Fresh combo</p>
+                <p class="product-weight">500g</p>
+                <div class="price-add">
+                    <span class="price">$56</span>
+                    <button class="add-btn"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Card 3: Lemon -->
+        <div class="product-card">
+            <div class="product-image-wrapper">
+                <img src="lemon.png" alt="Fresh lemon" class="product-image">
+                <span class="discount-badge">20% off</span>
+                <i class="fa-regular fa-heart wishlist-icon"></i>
+            </div>
+            <div class="product-details">
+                <div class="category-rating">
+                    <span class="category">Fruits</span>
+                    <span class="rating"><i class="fa-solid fa-star"></i> 4.5</span>
+                </div>
+                <p class="product-name">Fresh lemon</p>
+                <p class="product-weight">500g</p>
+                <div class="price-add">
+                    <span class="price">$56</span>
+                    <button class="add-btn"><i class="fa-solid fa-cart-shopping"></i> Add</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question">
+                1.) Do you offer free delivery?
+                <span class="arrow">v</span>
+            </div>
+            <div class="faq-answer">
+               <p>Yes, free standard delivery is offered on all orders above ₹5,000. Express and scheduled delivery options are also available at checkout.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                2.) How long will it take to receive my order?
+                <span class="arrow">v</span>
+            </div>
+            <div class="faq-answer">
+               <p>Delivery times vary based on location and product availability. Most orders are delivered within 5-10 business days. Custom-made items may take longer.</p>
+            </div>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">
+                3.) Can I return or exchange grocery after purchase?
+                <span class="arrow">v</span>
+            </div>
+            <div class="faq-answer">
+                <p>Yes, eligible items can be returned within 7 days of delivery. Items must be unused and in original condition. The Return Policy should be checked for details.</p>
+            </div>
+            </div>
+            <div class="faq-item">
+            <div class="faq-question">
+                4.) How can I contact customer support?
+                <span class="arrow">v</span>
+            </div>
+            <div class="faq-answer">
+               <p>You can reach us via live chat, email at support@furnishop.com, or call our helpline at 1800-123-4567,<br>(Mon-Sat, 10AM - 6 PM).</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <!-- Placeholder for the person image -->
+                <img src="footer.png" alt="Person" class="person-img">
+                <div class="footer-logo-section">
+                    <!-- Placeholder for the logo image -->
+                    <img src="logo.png" alt="The Market Logo" class="logo-img">
+    
+                    <p style="font-size: 24px;font-weight: bold;">Follow Us On:</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Career</a></li>
+                    </ul>
+                </div>
+                <div class="link-group">
+                    <h4>Customer service</h4>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Track your order</a></li>
+                        <li><a href="#">Return</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="link-group">
+                    <h4>Our information</h4>
+                    <ul>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">User terms&Conditions</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                    </ul>
+                </div>
+                <div class="link-group" style="color: black;">
+                    <h4>Contact info</h4>
+                    <p>123-456-789</p>
+                    <p>example@gmail.com</p>
+                    <p>72, north street</p>
+                    <p>Mumbai-001.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 My market. All rights reserved.</p>
+            <p style="font-weight: bold;"><a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
+
+
+
