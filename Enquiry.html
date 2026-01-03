@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grocery Website</title>
+    <link rel="stylesheet" href="Layout6.css">
+     <link rel="stylesheet" href="cdnjs.cloudflare.com">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="fonts.googleapis.com" rel="stylesheet">
+  <link rel="stylesheet" href="cdnjs.cloudflare.com">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="cdnjs.cloudflare.com" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        .body-Cont {
+    
+    background-color: #f0f0f0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.body-Cont img{
+    height:800px;
+}
+
+        .form-container {
+    background-color: #4CAF50; /* Green background color */
+    border-radius: 5px;
+    padding: 90px;
+    height: 100%;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    flex: 1;
+}
+
+.form-group.full-width {
+    flex: none;
+    width: 100%;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-size: 28px;
+    color: black; 
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+    width: 100%;
+    padding: 28px;
+    border: 1px solid black;
+    border-radius: 10px;
+    box-sizing: border-box; /* Ensures padding doesn't affect width */
+    font-size: 22px;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #999;
+}
+    </style>
+</head>
+<body>
+ <header class="site-header">
+    <div class="header-container">
+        <div class="logo-section">
+            <!-- Placeholder for the logo image -->
+            <div class="logo-placeholder"><img src="logo.png" alt="Logo" ></div>
+            
+        </div>
+        
+        <div class="search-section">
+            <input type="text" placeholder="Search product category" class="search-input">
+            <button class="search-button">
+                <!-- Magnifying glass icon can be added here (e.g., using an SVG or font icon) -->
+            </button>
+        </div>
+        
+        <div class="users">
+            <div class="user-profile" onclick="toggleDropdown()"><img src="user.png">
+                <nav class="dropdown-content" id="myDropdown">
+    <a href="Homeuser.html">My Accounts</a>
+    <a href="personalinfo.html">Personal Information</a>
+    <a href="#">My program</a>
+    <a href="mypassword.html">Password Manager</a>
+    <a href="logoutpage.html">Logout</a>
+  </nav></div>
+  <script>
+    function toggleDropdown() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.avatar')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+      }
+    }
+  }
+}
+  </script>
+             <span class="icon"><a href="wishlist.html"><i class="fa-regular fa-heart" style="color: black;margin-top: 0;"></i></a></span>
+            <span class="icon" style="text-decoration: none;color: #B89C65;" ><a href="Checkout.html"><i class="fa fa-shopping-cart" aria-hidden="true"></i></a></span>
+           <span class="notification-icon" id="bellIcon"><i class="fa-regular fa-bell"></i></span> 
+        
+    </div>
+    </div>
+    <div id="orderPopup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()">&times;</span>
+            <h2>Order Updates</h2>
+            <ul>
+                <li>"Your order has been placed successfully! We'll notify you once it's out for delivery."</li>
+                <li>"Good news! Your groceries are on the way. Track your delivery in real time."</li>
+                <li>"Your order has been delivered. Thank you for shopping with us!"</li>
+            </ul>
+        </div>
+    </div>
+    <script>
+        // Get the pop-up element
+var popup = document.getElementById("orderPopup");
+
+// Get the button that opens the pop-up
+var btn = document.getElementById("bellIcon");
+
+// Get the <span> element that closes the pop-up
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the pop-up 
+btn.onclick = function() {
+  popup.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the pop-up
+span.onclick = function() {
+  popup.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the pop-up, close it
+window.onclick = function(event) {
+  if (event.target == popup) {
+    popup.style.display = "none";
+  }
+}
+    </script>
+    <nav class="main-nav">
+        <a href="Home.html" >Home</a>
+        <a href="Shopping.html" >Shopping</a>
+        <a href="Categories.html" class="active">Categories</a>
+        <a href="Blogs.html">Blogs</a>
+        <a href="Contactus.html">Contact us</a>
+        <a href="Aboutus.html">About us</a>
+    </nav>
+</header>
+<div class="body-Cont">
+<div class="form-container">
+        <form action="#" method="POST">
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="first-name">First Name*</label>
+                    <input type="text" id="first-name" name="first-name" placeholder="Ex.john">
+                </div>
+                <div class="form-group">
+                    <label for="last-name">Last Name*</label>
+                    <input type="text" id="last-name" name="last-name" placeholder="Ex.Doe">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="email">E-mail*</label>
+                    <input type="email" id="email" name="email" placeholder="example@gmail.com">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone*</label>
+                    <input type="tel" id="phone" name="phone" placeholder="enter phone num">
+                </div>
+            </div>
+            <div class="form-group full-width">
+                <label for="subject">Subject*</label>
+                <input type="text" id="subject" name="subject" placeholder="Enter here">
+            </div>
+            <div class="form-group full-width">
+                <label for="message">Your Message*</label>
+                <textarea id="message" name="message" rows="4" placeholder="Enter here"></textarea>
+            </div>
+            
+        </form>
+    </div>
+    <img src="enquiry.png" width="600px">
+    </div>
+<script>
+    const name = document.getElementById('first-name');
+    const name1 = document.getElementById('last-name');
+    const Subject = document.getElementById('subject');
+    const Message = document.getElementById('message');
+    const Phone = document.getElementById('phone');
+    const Email = document.getElementById('email');
+
+    name.onclick = () => name.value = "Amjath";
+    name1.onclick = () => name1.value = "Althaf"
+Message.onclick = () => Message.value = "Hi Team, status of my product please check.";
+Subject.onclick = () => Subject.value = "Product Status"
+Phone.onclick = () => Phone.value = '7867980688';
+Email.onclick=() => Email.value = 'amjaan@gmail.com';
+
+
+</script>
+<footer>
+        <div class="footer-container">
+            <div class="footer-left">
+                <!-- Placeholder for the person image -->
+                <img src="footer.png" alt="Person" class="person-img">
+                <div class="footer-logo-section">
+                    <!-- Placeholder for the logo image -->
+                    <img src="logo.png" alt="The Market Logo" class="logo-img">
+    
+                    <p style="font-size: 24px;font-weight: bold;">Follow Us On:</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-links">
+                <div class="link-group">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About us</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact us</a></li>
+                        <li><a href="#">Career</a></li>
+                    </ul>
+                </div>
+                <div class="link-group">
+                    <h4>Customer service</h4>
+                    <ul>
+                        <li><a href="#">My Account</a></li>
+                        <li><a href="#">Track your order</a></li>
+                        <li><a href="#">Return</a></li>
+                        <li><a href="#">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="link-group">
+                    <h4>Our information</h4>
+                    <ul>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">User terms&Conditions</a></li>
+                        <li><a href="#">Return Policy</a></li>
+                    </ul>
+                </div>
+                <div class="link-group" style="color: black;">
+                    <h4>Contact info</h4>
+                    <p>123-456-789</p>
+                    <p>example@gmail.com</p>
+                    <p>72, north street</p>
+                    <p>Mumbai-001.</p>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="footer-bottom">
+            <p>&copy; 2025 My market. All rights reserved.</p>
+            <p style="font-weight: bold;"><a href="#">Terms & Conditions</a> | <a href="#">Privacy Policy</a></p>
+        </div>
+    </footer>
+</body>
+</html>
